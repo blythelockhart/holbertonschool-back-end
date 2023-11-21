@@ -16,7 +16,9 @@ if __name__ == '__main__':
                       'USERNAME',
                       'TASK_COMPLETED_STATUS',
                       'TASK_TITLE']
-        writer = csv.DictWriter(filename, fieldnames=fieldnames)
+        writer = csv.DictWriter(filename,
+                                fieldnames=fieldnames,
+                                quoting=csv.QUOTE_ALL)
 
         for task in todo:
             writer.writerow({
