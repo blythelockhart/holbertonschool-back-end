@@ -10,7 +10,8 @@ if __name__ == '__main__':
     todo = requests.get(url + "todos").json()
     data = {}
     for emp in emps:
-        emp_todo = [task for task in todo if task.get("userId") == emp.get("id")]
+        emp_todo = [task for task in todo
+                    if task.get("userId") == emp.get("id")]
         emp_todo = [{"username": emp.get("username"),
                      "task": task.get("title"),
                      "completed": task.get("completed")}
